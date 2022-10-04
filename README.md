@@ -2,6 +2,7 @@
 
 Unsupervised Image Segmentation with Dense Representative Learning and Sparse Labelling
 
+<br>
 
 ## Synopsis (paper abstract)
 Fully unsupervised semantic segmentation of images has been a challenging problem 
@@ -33,6 +34,7 @@ The full paper will be released soon. Currently cite the code as follow:
 ```
 
 
+<br>
 
 
 
@@ -42,6 +44,9 @@ The full paper will be released soon. Currently cite the code as follow:
 ```sh
 pip install -r requirements.txt
 ```
+
+<br>
+
 
 ## User guide
 
@@ -101,6 +106,7 @@ from the video with a good accuracy. The results for this example are shown belo
 
 <img src="https://github.com/stfc-sciml/sp-wnet-seg/blob/main/readme-resources/mark.gif" width="70%">
 
+<br>
 
 
 ## Funding and Support
