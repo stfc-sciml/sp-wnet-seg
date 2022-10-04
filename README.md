@@ -1,11 +1,10 @@
 # SP-Wnet
 
-Unsupervised Image Segmentation with Dense
-Representative Learning and Sparse Labelling
+Unsupervised Image Segmentation with Dense Representative Learning and Sparse Labelling
 
-#
 
-### Paper abstract
+
+## Paper abstract
 Fully unsupervised semantic segmentation of images has been a challenging problem 
 in computer vision due to its non-convexity and data insufficiency (e.g., only
 one target image available). Many deep learning models have been developed
@@ -23,15 +22,29 @@ that the model trained in 2D can be used to segment a 3D image or a video. Our
 experiments include general images and videos as well as 3D tomographic images
 from neutron and X-ray scattering.
 
-The full paper will be released soon.
+The full paper will be released soon. Currently cite the code as follow:
 
-### Installation
+```
+@misc{spwnet2022,
+    title  = {SP-WNet: Unsupervised Image Segmentation with Dense Representative Learning and Sparse Labelling},
+    author = {Kuangdai Leng, Robert Atwood, Winfried Kockelmann, Deniza Chekrygina, Jeyan Thiyagalingam},
+    url    = {https://github.com/stfc-sciml/sp-wnet-seg},
+    year   = {2022}
+}
+```
+
+
+
+
+
+## Installation
+
 
 ```sh
 pip install -r requirements.txt
 ```
 
-### User guide
+## User guide
 
 Unsupervised segmentation of a video can be performed with the following steps. 
 This is an example taken from [demo-cheetah.ipynb](demo-cheetah.ipynb). 
@@ -88,3 +101,10 @@ Once training is done, the trained `WNet` can (hopefully) be used to segment all
 from the video with a good accuracy. The results for this example are shown below.
 
 <img src="https://github.com/stfc-sciml/sp-wnet-seg/blob/main/readme-resources/mark.gif" width="70%">
+
+
+
+## Funding and Support
+
+This work was supported by the ISIS Neutron and Muon Source (ISIS) of the Science and Technology Facilities Council through the ISIS-ML funding, and by Wave I of the UKRI Strategic Priorities Fund under the EPSRC grant (EP/T001569/1), particularly the AI for Science theme in that grant and the Alan Turing Institute. We gratefully acknowledge their support.
+
