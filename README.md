@@ -1,10 +1,9 @@
-# SP-Wnet
+# SP-WNet
 
 Unsupervised Image Segmentation with Dense Representative Learning and Sparse Labelling
 
 
-
-## Paper abstract
+## Synopsis (paper abstract)
 Fully unsupervised semantic segmentation of images has been a challenging problem 
 in computer vision due to its non-convexity and data insufficiency (e.g., only
 one target image available). Many deep learning models have been developed
@@ -46,8 +45,8 @@ pip install -r requirements.txt
 
 ## User guide
 
-Unsupervised segmentation of a video can be performed with the following steps. 
-This is an example taken from [demo-cheetah.ipynb](demo-cheetah.ipynb). 
+Unsupervised segmentation of a video can be performed with the following steps,
+an example taken from [demo-cheetah.ipynb](demo-cheetah.ipynb). 
 Just skip the first and the last steps for a single-image task.
 
 #### Step 1: Select input image(s)
@@ -56,17 +55,17 @@ Suppose we have following target video for segmentation:
 <img src="https://github.com/stfc-sciml/sp-wnet-seg/blob/main/readme-resources/video.gif" width="70%">
 
 The fist step is to select a few representative clips, such as the following four. Here we
-rescale the image size by 1/3 and applied a little unsharp masking.
+rescale the image size by 1/3 and applied some unsharp masking.
 
 <img src="https://github.com/stfc-sciml/sp-wnet-seg/blob/main/readme-resources/input.png" width="70%">
 
 
 #### Step 2: Sample patches from each input image
-We train the autoencoder with smaller patches sampled from the original images and augmented 
+We train the autoencoder (a WNet) with smaller patches that are sampled from the original images and augmented 
 (flipped or rotated).
 This can be done conveniently using the function `sample_patch_datasets()` from `src/utils.py`.
-For example, the following figure show patches sampled from one of the above input images;
-there patches are in four different sizes, each size with 8 mini-batches: 
+For example, the following figure show the patches sampled from one of the above input images.
+They are in four different sizes, each size with 8 mini-batches: 
 * 64x64, with 9 patches per mini-batch
 * 64x96, with 6 patches per mini-batch
 * 96x64, with 6 patches per mini-batch
@@ -76,18 +75,18 @@ there patches are in four different sizes, each size with 8 mini-batches:
 
  
 #### Step 3: Generate superpixels for each input image
-Segmentation is performed on predetermined superpixels, which can be done using an oversegmentation
-algorithm such as SLIC. Our deep model support a large number of superpixels, so this is step can be done
+Segmentation will be performed based on predetermined superpixels, which can be done using an oversegmentation
+algorithm such as SLIC. Our deep model supports a large number of superpixels, so this step can be done
 trivially. Surely, a more careful oversegmentation that yields fewer superpixels can facilitate
 the training of the deep model.  The following figure shows the oversegmentation for 
-one of the above input images, which contains more than 13000 superpixels.
+one of the above input images, containing more than 13000 superpixels.
 
 <img src="https://github.com/stfc-sciml/sp-wnet-seg/blob/main/readme-resources/slic.png" width="70%">
 
 **Note**: our deep model also supports pixel-wise or dense segmentation, for which this step can be skipped.
 
 #### Step 4: Train a `WNet`
-The data ready. Now one can create a `WNet`, as defined in `src/wnet.py`, and use the function 
+The data are ready. Now one can create a `WNet`, as defined in `src/wnet.py`, and use the function 
 `train_sp_wnet()` from `src/train_predict.py` to train the `WNet` model.
 Several network and loss hyperparameters can be specified. 
 In general, 
@@ -106,5 +105,5 @@ from the video with a good accuracy. The results for this example are shown belo
 
 ## Funding and Support
 
-This work was supported by the ISIS Neutron and Muon Source (ISIS) of the Science and Technology Facilities Council through the ISIS-ML funding, and by Wave I of the UKRI Strategic Priorities Fund under the EPSRC grant (EP/T001569/1), particularly the AI for Science theme in that grant and the Alan Turing Institute. We gratefully acknowledge their support.
+This work was supported by the ALC Project *AIDA-NXtomo (Data fusion of neutron and X-ray tomographic data)*.
 
