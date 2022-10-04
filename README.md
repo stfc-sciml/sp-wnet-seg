@@ -40,12 +40,12 @@ Just skip the first and the last steps for a single-image task.
 #### Step 1: Select input image(s)
 Suppose we have following target video for segmentation:
 
-<img src="/Users/kuangdai/PycharmProjects/sp-wnet-seg/readme-resources/video.gif" width="70%">
+<img src="https://github.com/stfc-sciml/sp-wnet-seg/blob/main/readme-resources/video.gif" width="70%">
 
 The fist step is to select a few representative clips, such as the following four. Here we
 rescale the image size by 1/3 and applied a little unsharp masking.
 
-<img src="/Users/kuangdai/PycharmProjects/sp-wnet-seg/readme-resources/input.png" width="70%">
+<img src="https://github.com/stfc-sciml/sp-wnet-seg/blob/main/readme-resources/input.png" width="70%">
 
 
 #### Step 2: Sample patches from each input image
@@ -59,7 +59,7 @@ there patches are in four different sizes, each size with 8 mini-batches:
 * 96x64, with 6 patches per mini-batch
 * 96x96, with 4 patches per mini-batch
 
-<img src="/Users/kuangdai/PycharmProjects/sp-wnet-seg/readme-resources/patches.png" width="90%">
+<img src="https://github.com/stfc-sciml/sp-wnet-seg/blob/main/readme-resources/patches.png" width="90%">
 
  
 #### Step 3: Generate superpixels for each input image
@@ -69,7 +69,7 @@ trivially. Surely, a more careful oversegmentation that yields fewer superpixels
 the training of the deep model.  The following figure shows the oversegmentation for 
 one of the above input images, which contains more than 13000 superpixels.
 
-<img src="/Users/kuangdai/PycharmProjects/sp-wnet-seg/readme-resources/slic.png" width="70%">
+<img src="https://github.com/stfc-sciml/sp-wnet-seg/blob/main/readme-resources/slic.png" width="70%">
 
 **Note**: our deep model also supports pixel-wise or dense segmentation, for which this step can be skipped.
 
@@ -87,4 +87,4 @@ hyperparameter tuning.
 Once training is done, the trained `WNet` can (hopefully) be used to segment all the clips 
 from the video with a good accuracy. The results for this example are shown below.
 
-<img src="/Users/kuangdai/PycharmProjects/sp-wnet-seg/readme-resources/mark.gif" width="70%">
+<img src="https://github.com/stfc-sciml/sp-wnet-seg/blob/main/readme-resources/mark.gif" width="70%">
